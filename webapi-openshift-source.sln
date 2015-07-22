@@ -4,13 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6414F5AB-DBE0-46D2-A026-EB24943D62CE}"
+	ProjectSection(SolutionItems) = preProject
+		webapi_openshift_source.xproj = webapi_openshift_source.xproj
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AAF33BB5-57A7-4C3F-A421-F53C79A792F1}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "webapi_openshift_source", "src\webapi_openshift_source\webapi_openshift_source.xproj", "{DF7805D6-250C-4E5C-80BE-38395A007D49}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "webapi_openshift_source", "webapi_openshift_source.xproj", "{DF7805D6-250C-4E5C-80BE-38395A007D49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
