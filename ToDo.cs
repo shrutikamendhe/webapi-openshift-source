@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace webapi_openshift_source.Module
+namespace webapi_openshift_source
 {
     public class ToDo
     {
@@ -11,14 +11,6 @@ namespace webapi_openshift_source.Module
 
         public string Detail { get; set; }
 
-        public STATE State { get; set; }
-
-        public enum STATE
-        {
-            NOTSTARTED,
-            INPROGRESS,
-            DONE,
-            REMOVED
-        }
+        public string State { get; set; }
     }
 }

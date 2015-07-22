@@ -8,25 +8,27 @@ using Microsoft.AspNet.Mvc;
 
 namespace webapi_openshift_source.Controllers
 {
+
     [Route("api/[controller]")]
     public class ToDoController : Controller
     {
         /// <summary>
         /// Static todo list. Common for all
         /// </summary>
-        internal static List<Module.ToDo> _todo = new List<Module.ToDo>();
+        internal static List<ToDo> _todo = new List<ToDo>();
+
 
 
         // GET: api/todo
         [HttpGet]
-        public List<Module.ToDo> Get()
+        public List<ToDo> Get()
         {
             return _todo;
         }
 
         // GET api/todo/5
         [HttpGet("{index}")]
-        public Module.ToDo Get(int index)
+        public ToDo Get(int index)
         {
             try { return _todo[index]; } catch (Exception) { return null; }
         }
@@ -35,9 +37,10 @@ namespace webapi_openshift_source.Controllers
         [HttpPost]
         public void Post([FromBody]string title, [FromBody]string detail)
         {
-            _todo.Add(new Module.ToDo() {
+            _todo.Add(new ToDo()
+            {
                 Title = title,
-                Detail= title
+                Detail = title
             });
         }
 
@@ -48,7 +51,7 @@ namespace webapi_openshift_source.Controllers
             _todo[index].Title = title;
             _todo[index].Detail = detail;
             if (state.ToLower() == "done")
-                _todo[index].State = Module.ToDo.STATE.DONE;
+                _todo[index].State = state;
         }
 
         // DELETE api/delete/5

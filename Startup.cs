@@ -36,6 +36,15 @@ namespace webapi_openshift_source
             app.UseMvc();
             // Add the following route for porting Web API 2 controllers.
             // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
+
+            //Adding dummy tasks in todo list
+
+            if (Controllers.ToDoController._todo == null || Controllers.ToDoController._todo.Count == 0)
+            {
+                Controllers.ToDoController._todo = new List<ToDo>();
+                Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 1", Detail = "My top priority task." });
+                Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 2" });
+            }
         }
     }
 }
