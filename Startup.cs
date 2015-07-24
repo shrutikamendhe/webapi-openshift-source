@@ -44,7 +44,7 @@ namespace webapi_openshift_source
                 Controllers.ToDoController._todo = new List<ToDo>();
                 Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 1", Detail = "My top 1 priority task.", State = "ACTIVE" });
                 Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 2", Detail = "My top 2 priority task.", State = "ACTIVE" });
-                Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 2", Detail = "My top 3 priority task.", State = "DONE" });
+                Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 3", Detail = "My top 3 priority task.", State = "DONE" });
             }
         }
     }
