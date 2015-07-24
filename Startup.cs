@@ -10,6 +10,12 @@ using Microsoft.Framework.DependencyInjection;
 
 namespace webapi_openshift_source
 {
+    // <copyright file="Startup.cs" company="Click2Cloud">
+    // Copyright (c) 2015 All Rights Reserved
+    // </copyright>
+    // <author>Shrutika Mendhe</author>
+    // <date>07/24/2015 10:42 AM </date>
+    // <summary>This is entry point for an API</summary>
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -21,9 +27,6 @@ namespace webapi_openshift_source
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
-            // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
-            // services.AddWebApiConventions();
         }
 
         // Configure is called after ConfigureServices is called.
@@ -34,16 +37,14 @@ namespace webapi_openshift_source
 
             // Add MVC to the request pipeline.
             app.UseMvc();
-            // Add the following route for porting Web API 2 controllers.
-            // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
 
-            //Adding dummy tasks in todo list
-
+            //Add dummy items in todo list
             if (Controllers.ToDoController._todo == null || Controllers.ToDoController._todo.Count == 0)
             {
                 Controllers.ToDoController._todo = new List<ToDo>();
-                Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 1", Detail = "My top priority task." });
-                Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 2" });
+                Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 1", Detail = "My top 1 priority task.", State = "ACTIVE" });
+                Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 2", Detail = "My top 2 priority task.", State = "ACTIVE" });
+                Controllers.ToDoController._todo.Add(new ToDo() { Title = "Task 2", Detail = "My top 3 priority task.", State = "DONE" });
             }
         }
     }
