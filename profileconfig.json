@@ -1,0 +1,1 @@
+{"OpenshiftServer":"https://ose3m-dev.example.com:8443","ProjectName":"asp-net-project","BuildConfig":"c03-webapi","ServiceRoute":"http://c03-webapi-asp-net-project.cloudapps.example.com"}
